@@ -1,0 +1,182 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+body{
+    
+}
+.main_container{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    padding-top: 10rem;
+    align-items: center;
+    perspective: 55rem;
+    perspective-origin: 50% calc(50% - 30em);
+    transition: ease-in-out 2s;
+}
+
+.main_container.active{
+    background-image: url("Images/sasukeItachi\ Kids.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center ;
+    flex-wrap: wrap;
+    perspective: 30rem;
+    perspective-origin: 50% calc(50%-25rem);
+    align-items: flex-end;
+}
+
+.main_container.rightImg{
+    background-image: url("Images/Kid\ Brothers\ fight.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center ;
+    flex-wrap: wrap;
+    perspective: 30rem;
+    perspective-origin: 50% calc(50%-25rem);
+    align-items: flex-end;
+}
+
+.main_container.backImg{
+    background-image: url("Images/Itachi\ sasuke\ young.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center ;
+    flex-wrap: wrap;
+    perspective: 30rem;
+    perspective-origin: 50% calc(50%-25rem);
+    align-items: flex-end;
+}
+
+.main_container.leftImg{
+    background-image: url("Images/Itachi\ Death.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center ;
+    flex-wrap: wrap;
+    perspective: 30rem;
+    perspective-origin: 50% calc(50%-25rem);
+    align-items: center;
+}
+.main_container.topImg{
+    background-image: url("Images/Uchiha\ Sign.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center ;
+    flex-wrap: wrap;
+    perspective: 30rem;
+    perspective-origin: 50% calc(50%-25rem);
+    align-items: flex-end;
+}
+
+.main_container.active .cube,.main_container.rightImg .cube,.main_container.backImg .cube,.main_container.leftImg .cube,.main_container.topImg .cube{
+    margin-right: 10em;
+    height: 4em;
+    width: 4em;
+}
+
+.main_container.active .cube .front,.main_container.rightImg .front,.main_container.backImg .front,.main_container.leftImg .front,.main_container.topImg .front{
+    transform: translateZ(2em);
+}
+
+.main_container.active .cube .right,.main_container.rightImg .right,.main_container.backImg .right,.main_container.leftImg .right,.main_container.topImg .right{
+    transform: rotateY(90deg) translateZ(2em);
+}
+.main_container.active .cube .back,.main_container.rightImg .back,.main_container.backImg .back,.main_container.leftImg .back,.main_container.topImg .back{
+    transform: rotateY(180deg) translateZ(2em);
+}
+.main_container.active .cube .left,.main_container.rightImg .left,.main_container.backImg .left,.main_container.leftImg .left,.main_container.topImg .left{
+    transform: rotateY(270deg) translateZ(2em);
+}
+.main_container.active .cube .top,.main_container.rightImg .top,.main_container.backImg .top,.main_container.leftImg .top,.main_container.topImg .top{
+    transform: rotateX(90deg) translateZ(2em);
+    height: 4em;
+}
+
+.main_container.active .cube .bottom,.main_container.rightImg .bottom,.main_container.backImg .bottom,.main_container.leftImg .bottom,.main_container.topImg .bottom{
+    transform: rotateX(270deg) translateZ(2em);
+    height: 4em;
+}
+
+.cube{
+    height: 10em;
+    width: 18em;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotateMyScene 30s linear infinite reverse;
+    transition: ease-in-out 2s;
+}
+
+.front,.back,.right,.left,.top,.bottom{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(221, 58, 58);
+    box-shadow: 0 0 2rem black ;
+    border: none;
+}
+.front{
+    transform: translateZ(9em);
+    background-image: url("Images/sasukeItachi\ Kids.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center ;
+
+}
+
+.front_btn,.right_btn{
+    background-color: rgb(221, 58, 58,0);
+    border: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.right{
+    transform: rotateY(90deg) 
+    translateZ(9em);
+    background-image: url("Images/Kid\ Brothers\ fight.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center ;
+}
+.back{
+    transform: rotateY(180deg) 
+    translateZ(9em);
+    background-image: url("Images/Itachi\ sasuke\ young.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center ;
+}
+.left{
+    transform: rotateY(270deg) 
+    translateZ(9em);
+    background-image: url("Images/Itachi\ Death.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center ;
+}
+.top{
+    height: 18em;
+    transform: rotateX(90deg) 
+    translateZ(9em);
+    background-color: black;
+    background-image: url("Images/Uchiha\ Sign.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center ;
+}
+.bottom{
+    height: 18em;
+    transform: rotateX(270deg)
+    translateZ(10em);
+    box-shadow: none;
+    background: radial-gradient(#000 , #fff );
+}
+
+@keyframes rotateMyScene{
+    to{
+        transform: rotateY(360deg);
+    }
+}
